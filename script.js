@@ -1,5 +1,5 @@
 // Needed HTML objects etc.
-const random_quote_api_url = "http://api.quotable.io/random";
+const random_quote_api_url = "https://api.quotable.io/random";
 const quote_display = document.getElementById("quote-display");
 const quote_input = document.getElementById("quote-input");
 const timer_div = document.getElementById("timer");
