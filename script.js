@@ -1,5 +1,5 @@
 // Needed HTML objects etc.
-const random_quote_api_url = "https://api.quotable.io/random";
+const random_quote_api_url = "https://goquotes-api.herokuapp.com/api/v1/random?count=1";
 const quote_display = document.getElementById("quote-display");
 const quote_input = document.getElementById("quote-input");
 const timer_div = document.getElementById("timer");
@@ -87,7 +87,7 @@ quote_input.addEventListener("input", () =>
 
 function getRandomQuote()
 {
-    return fetch(random_quote_api_url).then(response => response.json()).then(data => data.content);
+    return fetch(random_quote_api_url).then(response => response.json()).then(data => data.quotes[0].text);
 }
 
 async function showNewQuote()
