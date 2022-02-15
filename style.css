@@ -1,0 +1,248 @@
+@font-face {
+    font-family: Typewriter;
+    src: url(fonts\\JMH\ Typewriter.ttf);
+}
+
+@font-face {
+    font-family: TypewriterB;
+    src: url(fonts\\JMH\ Typewriter-Bold.ttf);
+}
+
+@font-face {
+    font-family: TypewriterT;
+    src: url(fonts\\JMH\ Typewriter-Thin.ttf);
+}
+
+@font-face {
+    font-family: Simplifica;
+    src: url(fonts\\SIMPLIFICA\ Typeface.ttf);
+}
+
+body{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(13,13,13);
+    background: -moz-linear-gradient(45deg, rgba(13,13,13,1) 0%, rgba(38,38,38,1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(13,13,13,1) 0%, rgba(38,38,38,1) 100%);
+    background: linear-gradient(45deg, rgba(13,13,13,1) 0%, rgba(38,38,38,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0d0d",endColorstr="#262626",GradientType=1);
+    color: #BFBFBF;
+}
+.correct
+{
+    color: rgb(55, 110, 55);
+}
+
+.incorrect
+{
+    color: rgb(126, 73, 73);
+}
+
+.popup-container
+{
+    font-size: 3rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-family: simplifica;
+    transform: translate(-50%, -50%) scale(0);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 1px;
+    z-index: 100;
+    background-color: rgba(148, 148, 148, 0.247);
+    backdrop-filter: blur(10px);
+    max-width: 80%;
+    box-shadow: #000 1px 1px 5px;
+}
+
+.popup-container.active
+{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-header
+{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: #d3caca;
+    font-size: 3rem;
+}
+
+.popup-close
+{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 3rem;
+    filter: drop-shadow(0px 0px 3.5px #bfbfbf86);
+    font-weight: bold;
+    color: #BFBFBF;
+}
+.popup-close:hover
+{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 3rem;
+    filter: drop-shadow(0px 0px 5px #bfbfbfc5);
+    font-weight: bold;
+    color: #fdfafa;
+}
+
+.popup-body
+{
+    padding: 10px 15px;
+    
+}
+.game-container{
+    width: 50vw;
+    margin: auto;
+}
+
+#quote-display{
+    font-family: Simplifica;
+    font-size: 3rem;
+    margin-left: calc(1rem + 2px);
+    margin-right: calc(1rem + 2px);
+    margin-bottom: 1vh;
+    text-align: center;
+  }
+
+.quote-input{
+    width: 100%;
+    height: 8rem;
+    margin: auto;
+    font-family: Simplifica;
+    font-size: 3rem;
+    height: 8rem;
+    padding: .5rem 1rem;
+    color: #BFBFBF;
+    background-color: #0d0d0d7c;
+    backdrop-filter: blur(4px);
+    outline: none;
+    resize: none;
+    text-decoration: none;
+    
+}
+
+.changingT{
+    font-family: typewriterT;
+    color: #BFBFBF;
+    font-size: 4rem;
+    position: relative;
+    width: 100vw;
+    text-align: center;
+    
+}
+.changingT:hover{
+    color: #bfbfbf9a;   
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0d0d0d7c; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #BFBFBF;
+    border-radius: 1px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #505050; 
+  }
+
+.timer{
+    font-family: Simplifica;
+    margin: auto;
+    text-align: center;
+    font-size: 6rem;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    position: relative;
+    border: solid 3px #BFBFBF;
+    color: #BFBFBF;
+    padding: 1rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+.timer:hover{
+    font-family: Simplifica;
+    margin: auto;
+    text-align: center;
+    font-size: 6rem;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    position: relative;
+    border: solid 3px #bfbfbf9a;
+    color: #bfbfbf9a;
+    padding: 1rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    cursor: default;
+}
+#overlay
+{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.699);
+    pointer-events: none;
+}
+
+#overlay.active
+{
+    opacity: 1;
+    pointer-events: all;
+    animation: bg 3s infinite forwards;
+}
+@keyframes bg{
+
+}
+.sound{
+    z-index: 9;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    border: 1px solid #000;
+    position: absolute;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    background: #fdfafa;
+    color: #000;
+    cursor: pointer;
+}
+
+#stop,#start{
+    display: none;
+}
+#stop.active,#start.active{
+    display: block;
+}
+
+
+    /*   
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: .15em solid rgb(194, 194, 194);
+        letter-spacing: .15em; /* Adjust as needed
+        animation: 
+        typing 3.5s steps(40, end),
+        blink-caret 1s step-end infinite;
+    */

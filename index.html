@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>speed.typer</title>
+</head>
+<body>
+    <div class="popup-container" id="popup-container">
+        <div class="popup-header">
+            <div class="popup-title" id="popup-title">
+                Title!
+            </div>
+            <button data-close-button class="popup-close" id="popup-close">&times;</button>
+        </div>
+        <div class="popup-body" id="popup-body">
+            Hello, there! Welcome to my popup.
+        </div>
+    </div>
+
+    <div id="overlay" id="overlay">
+
+    </div>
+    
+    <div onclick="chIcon();" class="sound">
+        <i class="fa-thin fa-volume" id="stop"></i>
+        <i class="fa-thin fa-volume-slash" id="start"></i>
+    </div>
+<br>
+    <div class="changingT"><p href="" class="typewrite" data-period="2000" data-type='[ "Type that fast", "Faster than light", "*than you 2", "I love fishing" ]'></p></div>
+    
+    <div class="timer" id="timer">0</div>
+    <div class="game-container">
+        
+        <div class="quote-display" id="quote-display">quote</div>
+        <textarea spellcheck="false" id="quote-input" class="quote-input" autofocus>quote</textarea>
+    </div>
+    <script src="https://kit.fontawesome.com/a8eab26e8e.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
