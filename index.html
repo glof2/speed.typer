@@ -7,16 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <title>speed.typer</title>
 </head>
-<body>
+<body oncopy="return false" onpaste="return false" oncut="return false">
     <div class="popup-container" id="popup-container">
         <div class="popup-header">
             <div class="popup-title" id="popup-title">
-                Title!
             </div>
             <button data-close-button class="popup-close" id="popup-close">&times;</button>
         </div>
         <div class="popup-body" id="popup-body">
-            Hello, there! Welcome to my popup.
         </div>
     </div>
 
@@ -34,8 +32,8 @@
     <div class="timer" id="timer">0</div>
     <div class="game-container">
         
-        <div class="quote-display" id="quote-display">quote</div>
-        <textarea spellcheck="false" id="quote-input" class="quote-input" autofocus>quote</textarea>
+        <div class="quote-display" id="quote-display"></div>
+        <textarea spellcheck="false" id="quote-input" class="quote-input" autofocus></textarea>
     </div>
     <script src="https://kit.fontawesome.com/a8eab26e8e.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
