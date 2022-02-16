@@ -53,6 +53,18 @@ quote_input.addEventListener("input", () =>
         startTimer();
     }
 
+    if (input_arr.length > display_arr.length)
+    {
+        incorrect_strokes++;
+    }
+    else if (input_arr.length <= display_arr.length)
+    {
+        if(input_arr[input_arr.length - 1] != display_arr[input_arr.length - 1].innerHTML)
+        {
+            incorrect_strokes++;
+        }
+    }
+
     for (let index=0; index < display_arr.length; index++)
     {
         if (index >= input_arr.length)
@@ -70,7 +82,6 @@ quote_input.addEventListener("input", () =>
         }
         else
         {
-            incorrect_strokes++;
             correct = false;
             display_arr[index].classList.add("incorrect");
             display_arr[index].classList.remove("correct");
