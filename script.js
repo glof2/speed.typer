@@ -40,6 +40,7 @@ quote_input.addEventListener("input", () =>
     if (input_arr.length == 0)
     {
         resetQuizData();
+        stopTimer();
         resetTimer();
         stopTimer();
     }
@@ -51,6 +52,14 @@ quote_input.addEventListener("input", () =>
             started = true;
         }
         startTimer();
+    }
+
+    else if (input_arr.length <= display_arr.length)
+    {
+        if(input_arr[input_arr.length - 1] != display_arr[input_arr.length - 1].innerHTML)
+        {
+            incorrect_strokes++;
+        }
     }
 
     for (let index=0; index < display_arr.length; index++)
@@ -70,7 +79,6 @@ quote_input.addEventListener("input", () =>
         }
         else
         {
-            incorrect_strokes++;
             correct = false;
             display_arr[index].classList.add("incorrect");
             display_arr[index].classList.remove("correct");
@@ -206,8 +214,8 @@ let toplay=true;
 function chIcon()
 {
     toplay=!toplay;
-    op('.sound').classList.toggle("active");
-    
+    op('#start').classList.toggle("active");
+    op('#stop').classList.toggle("active");
 }
 
 ///////////////////////////////////////////////////////
