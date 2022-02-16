@@ -55,6 +55,7 @@ body{
 .incorrect
 {
     color: rgb(126, 73, 73);
+    text-decoration: underline;
 }
 
 .popup-container
