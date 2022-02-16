@@ -54,11 +54,6 @@ quote_input.addEventListener("input", () =>
         startTimer();
     }
 
-    if (input_arr.length > display_arr.length)
-    {
-        stopTimer()
-        openPopup()
-    }
     else if (input_arr.length <= display_arr.length)
     {
         if(input_arr[input_arr.length - 1] != display_arr[input_arr.length - 1].innerHTML)
