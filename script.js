@@ -42,6 +42,7 @@ quote_input.addEventListener("input", () =>
         resetQuizData();
         resetTimer();
         stopTimer();
+        stopTimer();
     }
     else if (input_arr.length == 1)
     {
@@ -55,7 +56,8 @@ quote_input.addEventListener("input", () =>
 
     if (input_arr.length > display_arr.length)
     {
-        incorrect_strokes++;
+        stopTimer()
+        openPopup()
     }
     else if (input_arr.length <= display_arr.length)
     {
