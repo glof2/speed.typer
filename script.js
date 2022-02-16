@@ -214,8 +214,8 @@ let toplay=true;
 function chIcon()
 {
     toplay=!toplay;
-    op('#start').classList.toggle("active");
-    op('#stop').classList.toggle("active");
+    op('.sound').classList.toggle("active");
+    
 }
 
 ///////////////////////////////////////////////////////
@@ -283,4 +283,3 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #BFBFBF }";
     document.body.appendChild(css);
 };
-
