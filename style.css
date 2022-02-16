@@ -32,9 +32,7 @@ body{
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-    background: rgb(13,13,13);
-    background: -moz-linear-gradient(45deg, rgba(13,13,13,1) 0%, rgba(38,38,38,1) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(13,13,13,1) 0%, rgba(38,38,38,1) 100%);
+    background-size: cover;
     background: linear-gradient(45deg, rgba(13,13,13,1) 0%, rgba(38,38,38,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0d0d",endColorstr="#262626",GradientType=1);
     color: #BFBFBF;
@@ -148,6 +146,7 @@ body{
     position: relative;
     width: 100vw;
     text-align: center;
+    transition: color 0.5s;
     
 }
 .changingT:hover{
@@ -186,6 +185,7 @@ body{
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
+    transition: color 0.5s;
 }
 .timer:hover{
     font-family: Simplifica;
@@ -229,24 +229,35 @@ body{
     z-index: 9;
     width: 3vw;
     height: 3vw;
+    margin-top: 2vh;
+    margin-left: 2vh;
     border-radius: 50%;
-    border: 1px solid #000;
+    border: 6px solid rgba(0, 0, 0, 0.479);
     position: absolute;
     margin-bottom: 0px;
-    margin-left: 0px;
-    background: #fdfafa;
+    background: #00000088;
+    color: #000;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: box-shadow 0.5s;
+}
+.sound:hover{
+    box-shadow: #d3caca 0px 0px 20px;
+    
+}
+.sound.active{
+    z-index: 9;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    border: 6px solid rgba(206, 206, 206, 0.479);
+    backdrop-filter: blur(4px);
+    position: absolute;
+    margin-bottom: 0px;
+    background: none;
     color: #000;
     cursor: pointer;
 }
-
-#stop,#start{
-    display: none;
-}
-#stop.active,#start.active{
-    display: block;
-}
-
-
     /*   
         overflow: hidden;
         white-space: nowrap;
@@ -256,3 +267,25 @@ body{
         typing 3.5s steps(40, end),
         blink-caret 1s step-end infinite;
     */
+  
+    @media screen and (min-width: 801px) {
+        body {
+            overflow-y: hidden;
+            
+                 }
+        }
+    @media screen and (max-width: 800px) {
+        body {
+            overflow-y: visible;
+            height: 100%;
+          }
+          .sound {
+              width: 7vw;
+              height: 7vw;
+          }
+          .sound.active {
+            width: 7vw;
+            height: 7vw;
+        }
+      }
+   
