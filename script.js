@@ -40,8 +40,8 @@ quote_input.addEventListener("input", () =>
     if (input_arr.length == 0)
     {
         resetQuizData();
-        resetTimer();
         stopTimer();
+        resetTimer();
         stopTimer();
     }
     else if (input_arr.length == 1)
@@ -283,4 +283,3 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #BFBFBF }";
     document.body.appendChild(css);
 };
-
